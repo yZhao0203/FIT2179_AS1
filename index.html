@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>IT job market in Australia</title>
@@ -39,5 +39,398 @@
         </object>
     </div>                
             <script type='text/javascript'>                    var divElement = document.getElementById('viz1776056832126');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Australia's IT Career Landscape | FIT2179 Data Visualisation 1</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --line: #e5e7eb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --maxw: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+      color: white;
+      padding: 72px 20px 56px;
+    }
+
+    .hero-inner,
+    .container {
+      width: min(100%, var(--maxw));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      max-width: 900px;
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 14px 0 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      margin-top: 22px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 42px 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: -34px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .story-block {
+      margin-bottom: 26px;
+    }
+
+    .story-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .viz-section {
+      display: grid;
+      grid-template-columns: 1.1fr 1.9fr;
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 26px;
+    }
+
+    .viz-copy {
+      position: sticky;
+      top: 18px;
+    }
+
+    .viz-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+      min-height: 420px;
+    }
+
+    .placeholder-box {
+      min-height: 360px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: var(--muted);
+      background: #f8fafc;
+    }
+
+    .notes {
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
+
+    .sources ul {
+      padding-left: 20px;
+      margin: 8px 0 0;
+    }
+
+    footer {
+      padding: 40px 20px 60px;
+      color: var(--muted);
+    }
+
+    .footer-box {
+      width: min(100%, var(--maxw));
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .intro-grid,
+      .viz-section {
+        grid-template-columns: 1fr;
+      }
+
+      .viz-copy {
+        position: static;
+      }
+
+      .section {
+        padding: 30px 16px;
+      }
+
+      .hero {
+        padding: 56px 16px 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">FIT2179 Data Visualisation 1</div>
+      <h1>Australia's IT Career Landscape</h1>
+      <p>
+        This visual story explores what the Australian IT job market looks like today. It focuses on salary,
+        job roles, and language backgrounds in the industry so that everyday viewers can better understand
+        who works in IT, where opportunities may be, and how the field is changing.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container viz-section">
+        <div class="viz-copy card">
+          <h2>Age group and average salary</h2>
+          <p>
+            This chart introduces the economic side of the IT industry. It helps viewers compare how earnings change across life stages.
+            That makes the topic personally relevant for students, career changers, and working adults.
+          </p>
+        </div>
+        <div class="viz-panel">
+          <div class='tableauPlaceholder' id='viz1776242237705' style='position: relative'>
+            <noscript>
+              <a href='#'>
+                <img alt='Age Group vs Average Salary' src='https://public.tableau.com/static/images/Bo/Book4_17762421294290/Sheet1/1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Book4_17762421294290/Sheet1' />
+              <param name='tabs' value='no' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book4_17762421294290/Sheet1/1.png' />
+              <param name='language' value='en-US' />
+            </object>
+            
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="container viz-section">
+        <div class="viz-copy card">
+          <h2>Language background in IT</h2>
+          <p>
+            IT is not only about jobs and salary. This chart adds a social dimension by showing who participates in the field.
+            It helps the audience think about representation, inclusion, and how diverse the workforce may be.
+          </p>
+        </div>
+        <div class="viz-panel">
+          <div class='tableauPlaceholder' id='viz1776242438520' style='position: relative'>
+            <noscript>
+              <a href='#'>
+                <img alt='Language in IT' src='https://public.tableau.com/static/images/Bo/Book1_17762407149720/Sheet1/1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Book1_17762407149720/Sheet1' />
+              <param name='tabs' value='no' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book1_17762407149720/Sheet1/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+        </div>
+      </div>
+
+      <div class="container viz-section">
+        <div class="viz-copy card">
+          <h2>Distribution of IT jobs</h2>
+          <p>
+            This section shifts the focus from people to occupations. It shows which roles appear most often and helps viewers understand
+            that the IT industry includes many different career paths rather than one single kind of job.
+          </p>
+        </div>
+        <div class="viz-panel">
+          <div class='tableauPlaceholder' id='viz1776242653217' style='position: relative'>
+            <noscript>
+              <a href='#'>
+                <img alt='IT job' src='https://public.tableau.com/static/images/Bo/Book2_17759916825590/Sheet1/1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Book2_17759916825590/Sheet1' />
+              <param name='tabs' value='no' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book2_17759916825590/Sheet1/1.png' />
+              <param name='animate_transition' value='no' />
+              <param name='display_static_image' value='no' />
+              <param name='display_spinner' value='no' />
+              <param name='display_overlay' value='no' />
+              <param name='display_count' value='no' />
+              <param name='language' value='en-US' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section">
+      <div class="container card">
+        <div class="label">Remaining charts</div>
+        <h2>Continue the story with the other seven charts</h2>
+        <p>
+          Your assignment requires at least ten charts. The layout below keeps the page in one long scroll and gives you clean places to add the rest.
+          Paste each extra Tableau embed into one of these panels and replace the short note with a chart-specific explanation.
+        </p>
+      </div>
+    </section> -->
+
+    <!-- <section class="section">
+      <div class="container viz-section">
+        <div class="viz-copy card"><div class="label">Chart 4</div><h2>Insert your next chart</h2><p>Use this section for a chart that expands the salary or workforce story.</p></div>
+        <div class="viz-panel"><div class="placeholder-box">Paste Tableau embed code for Chart 4 here</div></div>
+      </div>
+      <div class="container viz-section">
+        <div class="viz-copy card"><div class="label">Chart 5</div><h2>Insert your next chart</h2><p>Use a concise annotation that explains what matters most.</p></div>
+        <div class="viz-panel"><div class="placeholder-box">Paste Tableau embed code for Chart 5 here</div></div>
+      </div>
+      <div class="container viz-section">
+        <div class="viz-copy card"><div class="label">Chart 6</div><h2>Insert your next chart</h2><p>Prefer a different idiom if possible to increase variety.</p></div>
+        <div class="viz-panel"><div class="placeholder-box">Paste Tableau embed code for Chart 6 here</div></div>
+      </div>
+      <div class="container viz-section">
+        <div class="viz-copy card"><div class="label">Chart 7</div><h2>Insert your next chart</h2><p>This is a good place for a custom-built Tableau idiom.</p></div>
+        <div class="viz-panel"><div class="placeholder-box">Paste Tableau embed code for Chart 7 here</div></div>
+      </div>
+      <div class="container viz-section">
+        <div class="viz-copy card"><div class="label">Chart 8</div><h2>Insert your next chart</h2><p>Add a strong annotation to guide the reader clearly.</p></div>
+        <div class="viz-panel"><div class="placeholder-box">Paste Tableau embed code for Chart 8 here</div></div>
+      </div>
+      <div class="container viz-section">
+        <div class="viz-copy card"><div class="label">Chart 9</div><h2>Insert your next chart</h2><p>Keep the colour use consistent with earlier sections.</p></div>
+        <div class="viz-panel"><div class="placeholder-box">Paste Tableau embed code for Chart 9 here</div></div>
+      </div>
+      <div class="container viz-section">
+        <div class="viz-copy card"><div class="label">Chart 10</div><h2>Insert your final chart</h2><p>End with a chart that leaves the reader with a clear final takeaway.</p></div>
+        <div class="viz-panel"><div class="placeholder-box">Paste Tableau embed code for Chart 10 here</div></div>
+      </div>
+    </section> -->
+
+  </main>
+
+  <footer>
+    <div class="footer-box">
+      <div><strong>Australia's IT Career Landscape</strong></div>
+      <div>Created by Yan Zhao on 2026-04-15</div>
+    </div>
+  </footer>
+
+  <script type='text/javascript'>
+    (function () {
+      var ids = ['viz1776242237705', 'viz1776242438520', 'viz1776242653217'];
+      ids.forEach(function (id) {
+        var divElement = document.getElementById(id);
+        if (!divElement) return;
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (!vizElement) return;
+        vizElement.style.width = '100%';
+        vizElement.style.height = Math.max(520, divElement.offsetWidth * 0.72) + 'px';
+      });
+
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      document.body.appendChild(scriptElement);
+    })();
+  </script>
 </body>
 </html>
